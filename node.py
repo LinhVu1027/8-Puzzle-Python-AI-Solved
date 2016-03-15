@@ -1,7 +1,10 @@
 #Author: nhny at hcmut.edu.vn
 #Course: AI 2016
 #Lab 3
+<<<<<<< HEAD
 # DFS, BFS, Hill Climbing, A-Star with heuristics manhattan distance and hamming distance. 
+=======
+>>>>>>> e3fb97af3ca68c9fa8a1ead10f40d2d508cfc3dd
 
 import heapq
 

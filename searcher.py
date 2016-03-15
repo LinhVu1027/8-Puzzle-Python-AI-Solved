@@ -77,7 +77,11 @@ class Searcher(object):
             print("No solution found")
 
     def steepest_ascent_hill_climbing(self):
+<<<<<<< HEAD
         """Run steepest ascent hill climbing search."""
+=======
+        """Run hill climbing search."""
+>>>>>>> e3fb97af3ca68c9fa8a1ead10f40d2d508cfc3dd
         #TODO Implement hill climbing.
         stack = [self.start]
 
@@ -105,9 +109,16 @@ class Searcher(object):
 
     # I don't know this function
     def hill_climbing(self, depth = 100):
+<<<<<<< HEAD
         """Run hill climbing search."""
         #TODO Implement hill climbing.
         stack = [self.start]
+=======
+        """Run steepest ascent hill climbing search."""
+        #TODO Implement hill climbing.
+        stack = [self.start]
+        visited = set()
+>>>>>>> e3fb97af3ca68c9fa8a1ead10f40d2d508cfc3dd
 
         while stack:
             state = stack.pop()
@@ -116,18 +127,34 @@ class Searcher(object):
                 print "Find solution"
                 break
 
+<<<<<<< HEAD
             h_val = state.manhattan_distance() + state.hamming_distance()
+=======
+            if state in visited or state.step > depth:
+                self.print_path(state)
+                print "Cannot find solution"
+                continue
+
+            visited.add(state)
+
+            h_val = 50
+>>>>>>> e3fb97af3ca68c9fa8a1ead10f40d2d508cfc3dd
             next_state = False
             for s in state.next():
                 h_val_next = s.manhattan_distance() + s.hamming_distance()
                 if h_val_next < h_val:
                     next_state = s
                     h_val = h_val_next
+<<<<<<< HEAD
                     stack.append(next_state)
 
             if not next_state:
                 self.print_path(state)
                 print "Cannot find solution"
+=======
+
+            stack.append(next_state)
+>>>>>>> e3fb97af3ca68c9fa8a1ead10f40d2d508cfc3dd
             
     def astar(self, depth = 75):
         """Run A* search."""
